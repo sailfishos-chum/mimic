@@ -3,13 +3,13 @@ Name: mimic
 Version: 1.2.0.2
 Release: 1%{?dist}
 License: BSD-like
-Group: System/TTS
+Group: Applications/Multimedia
 URL: https://github.com/MycroftAI/mimic
 
 Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: gcc-c++ python libtool
+BuildRequires: gcc-c++ python libtool libicu52-devel
 %define _unpackaged_files_terminate_build 0
 
 %description
