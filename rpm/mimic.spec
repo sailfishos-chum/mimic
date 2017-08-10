@@ -15,6 +15,14 @@ BuildRequires: gcc-c++ python libtool libicu52-devel
 %description
 Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 
+%package devel
+Summary: mimic development headers and static library
+Group: Development/Libraries
+
+%package tools
+Summary: mimic tools
+Group: Applications/Multimedia
+
 %prep
 %setup -q -n %{name}-%{version}/mimic
 
@@ -40,6 +48,19 @@ Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 %files
 %defattr(-, root, root, 0755)
 %{_bindir}/mimic
+
+%files devel
+%defattr(-, root, root, 0755)
+%{_includedir}/ttsmimic
+%{_libdir}/libttsmimic*
+%{_libdir}/pkgconfig/mimic.pc
+
+%files tools
+%defattr(-, root, root, 0755)
+%{_bindir}/compile_regexes
+%{_bindir}/mimic_time
+%{_bindir}/mimicvox_info
+%{_bindir}/t2p
 
 %changelog
 * Wed Aug 10 2017 rinigus <rinigus.git@gmail.com> - 1.2.0.2-1
