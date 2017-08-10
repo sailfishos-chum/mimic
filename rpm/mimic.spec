@@ -13,15 +13,25 @@ BuildRequires: gcc-c++ python libtool libicu52-devel
 %define _unpackaged_files_terminate_build 0
 
 %description
-Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
+Mimic is a fast, lightweight Text-to-speech engine
+developed by Mycroft A.I. and VocaliD, based on Carnegie Mellon
+University Flite (Festival-Lite) software. Mimic takes in text and
+reads it out loud to create a high quality voice.
 
 %package devel
-Summary: mimic development headers and static library
+Summary: Mimic development headers and static library
 Group: Development/Libraries
+
+%description devel
+Mimic TTS engine development headers and static
+library
 
 %package tools
 Summary: mimic tools
 Group: Applications/Multimedia
+
+%description tools
+Mimic TTS engine tools
 
 %prep
 %setup -q -n %{name}-%{version}/mimic
