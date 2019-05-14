@@ -1,6 +1,6 @@
 Summary: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 Name: mimic
-Version: 1.2.0.2
+Version: 1.2.0.3
 Release: 1%{?dist}
 License: BSD-like
 Group: Applications/Multimedia
@@ -9,7 +9,8 @@ URL: https://github.com/MycroftAI/mimic
 Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: gcc-c++ python libtool libicu52-devel
+BuildRequires: gcc-c++ python libtool
+BuildRequires: pkgconfig(icu-uc)
 %define _unpackaged_files_terminate_build 0
 
 %description
