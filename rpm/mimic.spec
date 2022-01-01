@@ -1,6 +1,6 @@
 Summary: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 Name: mimic
-Version: 1.2.0.3
+Version: 1.3.0.1
 Release: 1%{?dist}
 License: BSD-like
 Group: Applications/Multimedia
