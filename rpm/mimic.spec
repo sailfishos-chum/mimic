@@ -42,15 +42,14 @@ Categories:
 Summary: mimic tools
 Group: Applications/Multimedia
 
+%description tools
+Mimic TTS engine tools
+
 Type: console-application
 Categories:
 - Utility
 - Audio
 - Accessibility
-
-
-%description tools
-Mimic TTS engine tools
 
 %prep
 %setup -q -n %{name}-%{version}/mimic
