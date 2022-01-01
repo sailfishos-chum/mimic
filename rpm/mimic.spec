@@ -19,6 +19,12 @@ developed by Mycroft A.I. and VocaliD, based on Carnegie Mellon
 University Flite (Festival-Lite) software. Mimic takes in text and
 reads it out loud to create a high quality voice.
 
+Type: console-application
+Categories:
+  - Utility
+  - Audio
+  - Accessibility
+
 %package devel
 Summary: Mimic development headers and static library
 Group: Development/Libraries
@@ -27,9 +33,21 @@ Group: Development/Libraries
 Mimic TTS engine development headers and static
 library
 
+Categories:
+- Library
+- Audio
+- Accessibility
+
 %package tools
 Summary: mimic tools
 Group: Applications/Multimedia
+
+Type: console-application
+Categories:
+- Utility
+- Audio
+- Accessibility
+
 
 %description tools
 Mimic TTS engine tools
