@@ -11,6 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: gcc-c++ python libtool
 BuildRequires: pkgconfig(icu-uc)
+BuildRequires: pkgconfig(libpcre)
 %define _unpackaged_files_terminate_build 0
 
 %description
