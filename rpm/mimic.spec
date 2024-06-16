@@ -1,3 +1,6 @@
+# disable debug as OBS builds get randomly failed due to timeouts with it
+%global debug_package %{nil}
+
 Summary: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 Name: mimic
 Version: 1.3.0.1
