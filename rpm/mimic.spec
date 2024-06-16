@@ -1,6 +1,6 @@
 Summary: Mycroft's TTS engine, based on CMU's Flite (Festival Lite)
 Name: mimic
-Version: 1.2.0.2
+Version: 1.3.0.1
 Release: 1%{?dist}
 License: BSD-like
 Group: Applications/Multimedia
@@ -8,10 +8,11 @@ URL: https://github.com/MycroftAI/mimic
 
 Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+Patch1: 0001-Fix-linking-on-gcc-10.2.0-or-newer.patch
 
 BuildRequires: gcc-c++ python libtool
 BuildRequires: pkgconfig(icu-uc)
-BuildRequires: pkgconfig(libpcre)
+BuildRequires: pkgconfig(libpcre2-8)
 %define _unpackaged_files_terminate_build 0
 
 %description
@@ -55,6 +56,8 @@ Categories:
 %prep
 %setup -q -n %{name}-%{version}/mimic
 
+%patch1 -p1
+
 %build
 %{__make} clean || true
 
@@ -77,6 +80,7 @@ Categories:
 %files
 %defattr(-, root, root, 0755)
 %{_bindir}/mimic
+%{_datadir}/mimic
 
 %files devel
 %defattr(-, root, root, 0755)
@@ -92,5 +96,5 @@ Categories:
 %{_bindir}/t2p
 
 %changelog
-* Wed Aug 10 2017 rinigus <rinigus.git@gmail.com> - 1.2.0.2-1
+* Thu Aug 10 2017 rinigus <rinigus.git@gmail.com> - 1.2.0.2-1
 - packaging for SFOS
