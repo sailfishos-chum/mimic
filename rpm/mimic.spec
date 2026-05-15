@@ -12,6 +12,7 @@ URL: https://github.com/MycroftAI/mimic
 Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Patch1: 0001-Fix-linking-on-gcc-10.2.0-or-newer.patch
+Patch2: 0002-PR232-Fix-build-HTSEngine-use-HTS_free.patch
 
 BuildRequires: gcc-c++ python libtool
 BuildRequires: pkgconfig(icu-uc)
@@ -57,9 +58,7 @@ Categories:
 - Accessibility
 
 %prep
-%setup -q -n %{name}-%{version}/mimic
-
-%patch1 -p1
+%autosetup -p1 -n %{name}-%{version}/mimic
 
 %build
 %{__make} clean || true
