@@ -1,0 +1,23 @@
+From bab709f22c4534015a9526ccef8fe040c900b386 Mon Sep 17 00:00:00 2001
+From: Dominique Leuenberger <dimstar@opensuse.org>
+Date: Mon, 31 Oct 2022 15:49:14 +0100
+Subject: [PATCH] HTSEngine: use HTS_free instead of libc's free()
+
+Fixes #231
+---
+ src/hts/hts_engine_API/lib/HTS_model.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/hts/hts_engine_API/lib/HTS_model.c b/src/hts/hts_engine_API/lib/HTS_model.c
+index 3d43af4..9f71fb1 100644
+--- a/src/hts/hts_engine_API/lib/HTS_model.c
++++ b/src/hts/hts_engine_API/lib/HTS_model.c
+@@ -698,7 +698,7 @@ static HTS_Boolean HTS_Model_load_pdf(HTS_Model * model, HTS_File * fp, size_t v
+    }
+    if (result == FALSE) {
+       model->npdf += 2;
+-      free(model->npdf);
++      HTS_free(model->npdf);
+       HTS_Model_initialize(model);
+       return FALSE;
+    }
